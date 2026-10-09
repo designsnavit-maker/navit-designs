@@ -444,3 +444,9 @@ body{overflow-x:clip}
   .video-frame{width:100%}
 }
 @media (max-width:600px){.video-art{max-width:320px;padding:1.2rem .6rem}}
+
+/* כפתור סאונד על הסרטון */
+.video-frame{position:relative}
+.video-sound{position:absolute;top:22px;inset-inline-start:22px;z-index:4;display:inline-flex;align-items:center;gap:.35em;font:600 .88rem/1 var(--f-hand);
+  padding:.55em .9em;border-radius:999px;border:2px solid var(--ink);background:var(--mustard);color:var(--ink);cursor:pointer;box-shadow:2px 3px 0 var(--ink);transform:rotate(-3deg)}
+.video-sound:hover{transform:rotate(-3deg) translateY(-1px)}
