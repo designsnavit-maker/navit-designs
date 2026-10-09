@@ -422,3 +422,25 @@ body{overflow-x:clip}
 .works-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){.works-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .pp{white-space:nowrap;unicode-bidi:isolate}
+
+/* ===== v4: סרטון מהסדנה ===== */
+.video-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.video-text h2 .cutout{margin-inline-start:.1em}
+.video-points{list-style:none;padding:0;margin:0 0 1.8rem;display:grid;gap:.55rem}
+.video-points li{position:relative;padding-inline-start:1.7rem;font-size:1.08rem}
+.video-points li::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:.8rem;height:.8rem;background:var(--mustard);border:1.5px solid var(--ink);transform:rotate(12deg)}
+.video-art{position:relative;justify-self:center;width:100%;max-width:400px;padding:1.5rem 1rem;isolation:isolate}
+.video-art i{position:absolute;display:block;z-index:-1;pointer-events:none}
+.video-art .va-peach{inset:4% 2% 10% 16%;background:var(--peach);transform:rotate(6deg);box-shadow:var(--shadow)}
+.video-art .va-circle{width:34%;aspect-ratio:1;border-radius:50%;background:var(--mustard);bottom:2%;inset-inline-end:-4%}
+.video-art .va-dots{width:44%;height:20%;top:0;inset-inline-start:0;background-image:radial-gradient(var(--ink) 22%,transparent 24%);background-size:14px 14px;opacity:.5}
+.video-frame{margin:0 auto;width:fit-content;max-width:100%;background:#fff;padding:12px 12px 10px;box-shadow:0 2px 0 rgba(42,35,32,.06),0 18px 34px -14px rgba(42,35,32,.45);transform:rotate(-2deg)}
+.video-frame video{display:block;width:auto;max-width:100%;height:min(600px,75vh);aspect-ratio:478/850;background:#1d1916;object-fit:cover}
+.video-frame figcaption{font:600 1rem/1.35 var(--f-hand);text-align:center;padding:.65rem .4rem .2rem;max-width:min(338px,100%);margin-inline:auto}
+@media (max-width:880px){
+  .video-grid{grid-template-columns:1fr}
+  .video-art{max-width:360px}
+  .video-frame video{height:auto;width:100%;max-height:70vh}
+  .video-frame{width:100%}
+}
+@media (max-width:600px){.video-art{max-width:320px;padding:1.2rem .6rem}}
