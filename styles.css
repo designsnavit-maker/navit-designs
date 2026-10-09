@@ -4,6 +4,95 @@
    הפלטה לקוחה מהסדנה עצמה: השולחן הירוק-מרווה, משטחי החיתוך באפרסק,
    הנייר הוורוד-לילך, הדבקים הצהובים, הכיסאות בגוון קרמל ולוח השעם.
    ===================================================================== */
+/* פונטים מאוחסנים מקומית (Google Fonts, רישיון OFL) */
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/assistant-hebrew-27533b.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/assistant-latin-6cb82b.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/assistant-hebrew-27533b.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/assistant-latin-6cb82b.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/assistant-hebrew-27533b.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/assistant-latin-6cb82b.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(fonts/frank-ruhl-libre-hebrew-c75011.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(fonts/frank-ruhl-libre-latin-8626b1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playpen Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/playpen-sans-hebrew-hebrew-d1b939.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Playpen Sans Hebrew';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/playpen-sans-hebrew-hebrew-d1b939.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Playpen Sans Hebrew';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/playpen-sans-hebrew-hebrew-d1b939.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
 :root{
   --paper:#FBF4E8;      /* נייר שמנת – רקע */
   --paper-2:#F4E9D6;    /* נייר כהה מעט */
@@ -59,7 +148,7 @@ p{margin:0 0 1em}
   cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;box-shadow:3px 4px 0 var(--ink)}
 .btn:hover{transform:translate(-1px,-2px);box-shadow:5px 6px 0 var(--ink)}
 .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
-.btn-wa{--bg:#2BB673;--fg:#fff}
+.btn-wa{--bg:#1A7F4B;--fg:#fff}
 .btn-light{--bg:var(--paper);--fg:var(--ink)}
 .btn-peach{--bg:var(--peach);--fg:var(--ink)}
 .btn-sm{font-size:.95rem;padding:.7em 1.1em;box-shadow:2px 3px 0 var(--ink)}
@@ -296,12 +385,12 @@ dialog.modal::backdrop{background:rgba(42,35,32,.55);backdrop-filter:blur(3px)}
 .page-head .deco .c{width:45%;height:30%;top:8%;right:6%;background-image:radial-gradient(var(--ink) 22%,transparent 24%);background-size:14px 14px;opacity:.5}
 
 /* ---------- אנימציות עדינות ---------- */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-.ws-card.reveal.in,.work.reveal.in,.quote.reveal.in,.gallery figure.reveal.in{transform:rotate(var(--r,0))}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .ws-card.reveal.in,.js .work-card.reveal.in,.work.reveal.in,.quote.reveal.in,.gallery figure.reveal.in{transform:rotate(var(--r,0))}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:1;transform:none}
 }
 
 /* ---------- רספונסיבי ---------- */
@@ -450,3 +539,106 @@ body{overflow-x:clip}
 .video-sound{position:absolute;top:22px;inset-inline-start:22px;z-index:4;display:inline-flex;align-items:center;gap:.35em;font:600 .88rem/1 var(--f-hand);
   padding:.55em .9em;border-radius:999px;border:2px solid var(--ink);background:var(--mustard);color:var(--ink);cursor:pointer;box-shadow:2px 3px 0 var(--ink);transform:rotate(-3deg)}
 .video-sound:hover{transform:rotate(-3deg) translateY(-1px)}
+
+/* ===== v5: אופטימיזציה – סדנאות במרכז, CTA, נגישות ===== */
+[id]{scroll-margin-top:84px}
+.anchor{position:absolute;top:0}
+.mt{margin-top:1.6rem}
+.kicker-ink{color:var(--ink)}
+.lead-ink{color:var(--ink)}
+.fine{font-size:.92rem;color:var(--ink-soft);margin-top:1rem}
+.center-cta{text-align:center;margin:2rem 0 0}
+.cta-row{margin-top:2.2rem}
+.hero h1{font-size:clamp(2.5rem,5.8vw,4.7rem)}
+.hero-points,.plain-list{list-style:none;padding:0;margin:0 0 1.6rem;display:grid;gap:.5rem}
+.hero-points li,.plain-list li{position:relative;padding-inline-start:1.7rem}
+.hero-points li::before,.plain-list li::before{content:"";position:absolute;inset-inline-start:0;top:.6em;width:.75rem;height:.75rem;background:var(--mustard);border:1.5px solid var(--ink);transform:rotate(12deg)}
+.hero .lead{margin-bottom:1.2rem}
+
+/* כרטיסי קהל – 4 */
+.ws-grid.four{grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.5rem;max-width:none}
+.ws-grid.four .ws-card:nth-child(4){--r:.5deg}
+.ws-card h3{font-size:1.4rem}
+.ws-card .ws-actions{align-items:center;gap:.8rem 1rem}
+.ws-card .ws-actions .link{font-size:.95rem}
+.c-lilac .icon{background:var(--lilac)}.c-lilac{border-top:8px solid var(--lilac)}
+@media (max-width:1180px){.ws-grid.four{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px;margin-inline:auto}}
+@media (max-width:640px){.ws-grid.four{grid-template-columns:1fr;max-width:460px;gap:2.6rem}}
+.ws-card picture,.gallery-mini picture,.work-img picture,.portrait picture,.deco-photo picture,.hero-art picture{display:block;width:100%;height:100%}
+
+/* עובדות מהירות */
+.facts-sec{padding-block:2.2rem}
+.facts{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.facts li{background:var(--paper);padding:1rem 1.1rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.1rem;text-align:center}
+.facts b{font:900 1.35rem/1.2 var(--f-display)}
+.facts span{font-size:.92rem;color:var(--ink-soft)}
+@media (max-width:700px){.facts{grid-template-columns:1fr 1fr}}
+
+/* 3 צעדים */
+.steps-sec{padding-block:clamp(3rem,6vw,4.5rem)}
+.steps-strip{grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.steps-strip li{background:#fff}
+@media (max-width:800px){.steps-strip{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+
+/* גלריה קטנה */
+.gallery-mini{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start}
+.gallery-mini figure{margin:0;background:#fff;padding:10px;box-shadow:var(--shadow);transform:rotate(-1.5deg)}
+.gallery-mini figure:nth-child(2){transform:rotate(1.8deg);margin-top:2.5rem}
+.gallery-mini img{width:100%;aspect-ratio:4/5;object-fit:cover}
+
+/* כרטיס עבודה סטטי */
+.work-card{position:relative;background:#fff;padding:12px 12px 16px;box-shadow:var(--shadow);transform:rotate(var(--r,0deg));display:flex;flex-direction:column}
+.work-card:nth-child(3n+1){--r:-1deg}.work-card:nth-child(3n+2){--r:.8deg}.work-card:nth-child(3n){--r:-.4deg}
+.work-card .work-meta{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:.25rem;padding-top:.8rem}
+.work-card .work-desc{font-size:.95rem;color:var(--ink-soft);margin:.2rem 0 .3rem;line-height:1.55}
+.work-card .ws-actions{margin-top:auto;padding-top:.6rem}
+.work-card .btn-sm{font-size:.88rem;padding:.6em .9em}
+@media (max-width:600px){.work-card{padding:8px 8px 12px}.work-card .work-desc{display:none}.work-card .ws-actions{flex-direction:column;align-items:stretch}.work-card .btn-sm{justify-content:center}}
+
+/* מחירים */
+.price-badge{display:inline-flex;flex-direction:column;gap:.15rem;background:#fff;padding:.8rem 1.2rem;box-shadow:var(--shadow);transform:rotate(-1deg);margin:0 0 1.4rem;border-inline-start:6px solid var(--mustard)}
+.price-badge b{font:900 1.7rem/1.1 var(--f-display)}
+.price-badge span{font-size:.95rem;color:var(--ink-soft)}
+.price-line{margin:.4rem 0 1rem}.price-line b{font:900 1.6rem/1 var(--f-display)}
+.price-table-wrap{overflow-x:auto;background:#fff;box-shadow:var(--shadow)}
+.price-table{width:100%;border-collapse:collapse;font-size:1rem}
+.price-table th,.price-table td{text-align:start;padding:.85rem 1rem;border-bottom:1.5px dashed rgba(42,35,32,.2);vertical-align:top}
+.price-table thead th{background:var(--ink);color:var(--paper);font-weight:700}
+.price-table tbody th a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--coral)}
+.price-table td:nth-child(2){font:900 1.15rem/1.3 var(--f-display);white-space:nowrap}
+@media (max-width:600px){
+  .price-table thead{display:none}
+  .price-table tr{display:block;padding:.8rem 1rem;border-bottom:1.5px dashed rgba(42,35,32,.2)}
+  .price-table th,.price-table td{display:block;padding:.1rem 0;border:0}
+}
+.included-row{margin-top:3rem}
+.extras.three{grid-template-columns:repeat(3,1fr);margin-top:0}
+@media (max-width:980px){.extras.three{grid-template-columns:1fr}}
+
+/* צרו קשר */
+.contact-sec{padding-block:clamp(3.5rem,7vw,5.5rem)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.contact-list li{align-items:flex-start}
+.contact-list .ic{font-size:1.1rem}
+.ic-pink{background:var(--pink)!important}.ic-sage{background:var(--sage)!important}.ic-peach{background:var(--peach)!important}.ic-mustard{background:var(--mustard)!important}
+@media (max-width:880px){.contact-grid{grid-template-columns:1fr;gap:2rem}}
+.foot-h{font:600 1rem/1.3 var(--f-hand);color:var(--mustard);margin:0 0 .8rem}
+.foot-about{margin-top:1rem;opacity:.85;max-width:34ch}
+.site-footer{margin-top:0}
+.center-head{text-align:center}.center-head .wrap > *{max-width:none}.center-head .hero-ctas{justify-content:center}
+
+/* וואטסאפ – בר תחתון במובייל */
+.wa-bar{display:none}
+@media (max-width:760px){
+  .wa-float{display:none}
+  .wa-bar{display:flex;position:fixed;z-index:60;bottom:0;left:0;right:0;align-items:center;justify-content:center;gap:.6rem;
+    padding:.85rem 1rem calc(.85rem + env(safe-area-inset-bottom));background:#1A7F4B;color:#fff;font:700 1.05rem/1.2 var(--f-body);text-decoration:none;
+    border-top:2px solid var(--ink);box-shadow:0 -6px 18px rgba(0,0,0,.18)}
+  .wa-bar svg{width:1.45em;height:1.45em;flex:none}
+  body{padding-bottom:62px}
+}
+.logo-text small{font-size:.7rem}
+.open-sec .no-dates{flex-direction:column;align-items:flex-start}
+.checklist{margin-bottom:1.8rem}
+.site-footer .logo-text small{color:var(--kraft)}
+@media (max-width:600px){.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{justify-content:center}}

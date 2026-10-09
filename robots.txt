@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://designsnavit-maker.github.io/navit-designs/sitemap.xml
