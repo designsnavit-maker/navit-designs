@@ -148,7 +148,6 @@ p{margin:0 0 1em}
   cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;box-shadow:3px 4px 0 var(--ink)}
 .btn:hover{transform:translate(-1px,-2px);box-shadow:5px 6px 0 var(--ink)}
 .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
-.btn-wa{--bg:#1A7F4B;--fg:#fff}
 .btn-light{--bg:var(--paper);--fg:var(--ink)}
 .btn-peach{--bg:var(--peach);--fg:var(--ink)}
 .btn-sm{font-size:.95rem;padding:.7em 1.1em;box-shadow:2px 3px 0 var(--ink)}
@@ -369,11 +368,6 @@ dialog.modal::backdrop{background:rgba(42,35,32,.55);backdrop-filter:blur(3px)}
 .site-footer .logo-text{color:var(--paper)}
 .fineprint{margin-top:2.5rem;padding-top:1.2rem;border-top:1px dashed rgba(251,244,232,.25);font-size:.88rem;opacity:.7;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 
-/* ---------- כפתור וואטסאפ צף ---------- */
-.wa-float{position:fixed;bottom:18px;inset-inline-start:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:#2BB673;display:grid;place-items:center;
-  box-shadow:0 8px 22px rgba(0,0,0,.25);border:2px solid var(--ink);transition:transform .2s}
-.wa-float:hover{transform:scale(1.07) rotate(-6deg)}
-.wa-float svg{width:32px;height:32px;fill:#fff}
 
 /* ---------- Page header (עמודים פנימיים) ---------- */
 .page-head{padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2.5rem,5vw,3.5rem);overflow:hidden}
@@ -540,105 +534,108 @@ body{overflow-x:clip}
   padding:.55em .9em;border-radius:999px;border:2px solid var(--ink);background:var(--mustard);color:var(--ink);cursor:pointer;box-shadow:2px 3px 0 var(--ink);transform:rotate(-3deg)}
 .video-sound:hover{transform:rotate(-3deg) translateY(-1px)}
 
-/* ===== v5: אופטימיזציה – סדנאות במרכז, CTA, נגישות ===== */
+/* ===== v6 (אוקטובר 2026): העיצוב המקורי + HTML מוכן מראש, גלריה עם לייטבוקס, יצירת קשר שקטה ===== */
 [id]{scroll-margin-top:84px}
 .anchor{position:absolute;top:0}
 .mt{margin-top:1.6rem}
 .kicker-ink{color:var(--ink)}
 .lead-ink{color:var(--ink)}
-.fine{font-size:.92rem;color:var(--ink-soft);margin-top:1rem}
-.center-cta{text-align:center;margin:2rem 0 0}
+.fine{font-size:.92rem;color:var(--ink-soft);margin-top:1.2rem}
+.fine.center{text-align:center}
+.center-cta{margin:2.4rem 0 0;display:flex;flex-wrap:wrap;gap:1rem 1.6rem;justify-content:center;align-items:center}
 .cta-row{margin-top:2.2rem}
-.hero h1{font-size:clamp(2.5rem,5.8vw,4.7rem)}
-.hero-points,.plain-list{list-style:none;padding:0;margin:0 0 1.6rem;display:grid;gap:.5rem}
-.hero-points li,.plain-list li{position:relative;padding-inline-start:1.7rem}
-.hero-points li::before,.plain-list li::before{content:"";position:absolute;inset-inline-start:0;top:.6em;width:.75rem;height:.75rem;background:var(--mustard);border:1.5px solid var(--ink);transform:rotate(12deg)}
-.hero .lead{margin-bottom:1.2rem}
+picture{display:block}
+.ws-card picture,.work-img picture,.portrait picture,.deco-photo picture,.hero-art picture,.gallery picture,.gallery-mini picture{width:100%;height:100%}
+.hero-art .photo picture{height:100%}
+.site-footer{margin-top:22px}
+.foot-h{font:600 1rem/1.3 var(--f-hand);color:var(--mustard);margin:0 0 .8rem}
+.foot-about{margin-top:1rem;opacity:.85;max-width:34ch}
+.site-footer .logo-text small{color:var(--kraft)}
+.center-head{text-align:center}.center-head .wrap > *{max-width:none}.center-head .hero-ctas{justify-content:center}
+.page-head-inner{position:relative}
+@media (max-width:600px){.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{justify-content:center}}
+[aria-current="true"]{background:var(--paper-2)}
+.nav a[aria-current="true"]{background:rgba(237,190,58,.45)}
 
-/* כרטיסי קהל – 4 */
-.ws-grid.four{grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.5rem;max-width:none}
-.ws-grid.four .ws-card:nth-child(4){--r:.5deg}
-.ws-card h3{font-size:1.4rem}
-.ws-card .ws-actions{align-items:center;gap:.8rem 1rem}
-.ws-card .ws-actions .link{font-size:.95rem}
-.c-lilac .icon{background:var(--lilac)}.c-lilac{border-top:8px solid var(--lilac)}
-@media (max-width:1180px){.ws-grid.four{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px;margin-inline:auto}}
-@media (max-width:640px){.ws-grid.four{grid-template-columns:1fr;max-width:460px;gap:2.6rem}}
-.ws-card picture,.gallery-mini picture,.work-img picture,.portrait picture,.deco-photo picture,.hero-art picture{display:block;width:100%;height:100%}
+/* וואטסאפ בכותרת – אייקון קטן ושקט */
+.nav .nav-wa{display:inline-grid;place-items:center;width:40px;height:40px;padding:0;margin-inline-start:.4rem;border:1.5px solid rgba(42,35,32,.35);border-radius:50%;color:var(--sage-deep)}
+.nav .nav-wa:hover{background:var(--paper-2);border-color:var(--ink)}
+.nav-wa svg{width:20px;height:20px}
+.nav-wa-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:880px){
+  .nav .nav-wa{display:flex;width:auto;height:auto;gap:.6rem;justify-content:flex-start;border:0;border-radius:999px;margin:.2rem 0 0;padding:.7em 1em;color:var(--ink)}
+  .nav-wa svg{color:var(--sage-deep)}
+  .nav-wa-label{position:static;width:auto;height:auto;overflow:visible;clip:auto}
+}
 
-/* עובדות מהירות */
-.facts-sec{padding-block:2.2rem}
-.facts{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.facts li{background:var(--paper);padding:1rem 1.1rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.1rem;text-align:center}
-.facts b{font:900 1.35rem/1.2 var(--f-display)}
-.facts span{font-size:.92rem;color:var(--ink-soft)}
-@media (max-width:700px){.facts{grid-template-columns:1fr 1fr}}
+/* כרטיס עבודה = קישור שפותח לייטבוקס */
+a.work{display:block;text-decoration:none}
+.work-img{position:relative}
+.work-img::after{content:"";position:absolute;inset-block-end:10px;inset-inline-start:10px;width:34px;height:34px;border-radius:50%;background:rgba(251,244,232,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A2320' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6'/%3E%3Cpath d='m15 15 5 5M10.5 8v5M8 10.5h5'/%3E%3C/svg%3E") center/18px no-repeat;box-shadow:var(--shadow);opacity:0;transform:scale(.85);transition:opacity .25s, transform .25s}
+.work:hover .work-img::after,.work:focus-visible .work-img::after{opacity:1;transform:none}
+@media (hover:none){.work-img::after{opacity:.9;transform:none;width:30px;height:30px;background-size:16px}}
+.works-sec{padding-top:3rem}
 
-/* 3 צעדים */
-.steps-sec{padding-block:clamp(3rem,6vw,4.5rem)}
-.steps-strip{grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.steps-strip li{background:#fff}
-@media (max-width:800px){.steps-strip{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+/* לייטבוקס */
+dialog.modal{max-height:min(92vh,900px);overflow:auto;overscroll-behavior:contain}
+dialog.modal[open]{animation:lb-in .25s ease}
+@keyframes lb-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.lightbox .modal-grid{grid-template-columns:1.15fr .85fr;align-items:stretch}
+.lb-media{position:relative;background:#fff;display:grid;place-items:center;padding:clamp(.8rem,2vw,1.6rem);min-height:320px}
+.lightbox .lb-img{width:100%;height:auto;max-height:min(82vh,820px);aspect-ratio:auto;object-fit:contain;background:#fff}
+.lb-nav{position:absolute;top:50%;margin-top:-22px;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:rgba(251,244,232,.94);font:700 1.6rem/1 var(--f-display);cursor:pointer;display:grid;place-items:center;padding:0 0 4px;color:var(--ink)}
+.lb-prev{inset-inline-start:10px}.lb-next{inset-inline-end:10px}
+.lb-nav:hover{background:var(--mustard)}
+.lightbox .modal-body{padding:2.6rem 2rem 2rem;justify-content:center}
+.lightbox .modal-body h2{font-size:clamp(1.6rem,3vw,2rem);margin:0}
+.lb-count{font:600 .85rem/1 var(--f-hand);color:var(--ink-soft);margin:0}
+.lb-desc{margin:0}
+.lb-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;margin-top:.6rem}
+.lb-ship{font:500 .85rem/1.3 var(--f-hand);color:var(--ink-soft);margin:0}
+@media (max-width:700px){
+  dialog.modal{max-height:94vh;width:94vw}
+  .lightbox .modal-grid{grid-template-columns:1fr}
+  .lb-media{min-height:0;padding:.7rem}
+  .lightbox .lb-img{max-height:44vh}
+  .lightbox .modal-body{padding:1.2rem 1.3rem 1.5rem;gap:.55rem}
+  .lightbox .modal-close{top:.5rem;inset-inline-end:.5rem}
+  .lightbox .modal-body .lb-desc{font-size:.98rem;line-height:1.6}
+  .lb-nav{width:40px;height:40px;margin-top:-20px}
+}
+body.lb-open{overflow:hidden}
 
-/* גלריה קטנה */
+/* יצירת קשר – שלוש אפשרויות שוות */
+.contact-sec{padding-block:clamp(3.5rem,7vw,5.5rem)}
+.contact-sec .section-head{margin-bottom:2.2rem}
+.contact-sec .section-head .lead{margin-inline:auto}
+.contact-options{list-style:none;padding:0;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem;max-width:900px}
+.contact-options a{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;text-decoration:none;background:var(--paper);padding:1.5rem 1rem 1.3rem;box-shadow:var(--shadow);transform:rotate(var(--r,0));transition:transform .25s ease, box-shadow .25s ease;height:100%}
+.contact-options li:nth-child(1) a{--r:-.8deg}.contact-options li:nth-child(2) a{--r:.6deg}.contact-options li:nth-child(3) a{--r:-.4deg}
+.contact-options a:hover,.contact-options a:focus-visible{transform:rotate(0) translateY(-3px);box-shadow:0 16px 30px -14px rgba(42,35,32,.45)}
+.contact-options .ic{width:2.9rem;height:2.9rem;border-radius:50%;display:grid;place-items:center;margin-bottom:.35rem;color:var(--ink)}
+.contact-options .ic svg{width:1.3rem;height:1.3rem}
+.ic-pink{background:var(--pink)}.ic-sage{background:var(--sage)}.ic-peach{background:var(--peach)}
+.co-label{font:900 1.2rem/1.2 var(--f-display)}
+.co-val{font-size:.98rem;color:var(--ink-soft);border-bottom:2px solid var(--coral);overflow-wrap:anywhere}
+.contact-note{text-align:center;color:var(--ink-soft);margin:2.2rem auto 0;max-width:62ch;font-size:1rem}
+@media (max-width:700px){.contact-options{grid-template-columns:1fr;max-width:360px;gap:1rem}.contact-options a{display:grid;grid-template-columns:auto 1fr;column-gap:.9rem;row-gap:.1rem;align-items:center;text-align:start;padding:.95rem 1.1rem}.contact-options .ic{grid-row:span 2;margin:0;width:2.6rem;height:2.6rem}.co-label,.co-val{justify-self:start}}
+
+/* רכיבים קטנים */
+.extras.one{grid-template-columns:1fr;max-width:760px;margin-inline:auto}
+.extras.three{grid-template-columns:repeat(3,1fr);margin-top:0}
+@media (max-width:980px){.extras.three{grid-template-columns:1fr}}
+.extra .link{white-space:nowrap}
+.price-note{display:inline-flex;flex-direction:column;gap:.2rem;background:#fff;padding:1.1rem 1.4rem;box-shadow:var(--shadow);transform:rotate(-1deg);border-top:8px solid var(--mustard);margin:.4rem 0 .6rem}
+.price-note b{font:900 2rem/1.1 var(--f-display)}
+.price-note .pkg{font:600 .95rem/1.3 var(--f-hand);color:var(--ink-soft)}
+.price-note span{color:var(--ink-soft)}
 .gallery-mini{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start}
 .gallery-mini figure{margin:0;background:#fff;padding:10px;box-shadow:var(--shadow);transform:rotate(-1.5deg)}
 .gallery-mini figure:nth-child(2){transform:rotate(1.8deg);margin-top:2.5rem}
 .gallery-mini img{width:100%;aspect-ratio:4/5;object-fit:cover}
-
-/* כרטיס עבודה סטטי */
-.work-card{position:relative;background:#fff;padding:12px 12px 16px;box-shadow:var(--shadow);transform:rotate(var(--r,0deg));display:flex;flex-direction:column}
-.work-card:nth-child(3n+1){--r:-1deg}.work-card:nth-child(3n+2){--r:.8deg}.work-card:nth-child(3n){--r:-.4deg}
-.work-card .work-meta{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:.25rem;padding-top:.8rem}
-.work-card .work-desc{font-size:.95rem;color:var(--ink-soft);margin:.2rem 0 .3rem;line-height:1.55}
-.work-card .ws-actions{margin-top:auto;padding-top:.6rem}
-.work-card .btn-sm{font-size:.88rem;padding:.6em .9em}
-@media (max-width:600px){.work-card{padding:8px 8px 12px}.work-card .work-desc{display:none}.work-card .ws-actions{flex-direction:column;align-items:stretch}.work-card .btn-sm{justify-content:center}}
-
-/* מחירים */
-.price-badge{display:inline-flex;flex-direction:column;gap:.15rem;background:#fff;padding:.8rem 1.2rem;box-shadow:var(--shadow);transform:rotate(-1deg);margin:0 0 1.4rem;border-inline-start:6px solid var(--mustard)}
-.price-badge b{font:900 1.7rem/1.1 var(--f-display)}
-.price-badge span{font-size:.95rem;color:var(--ink-soft)}
-.price-line{margin:.4rem 0 1rem}.price-line b{font:900 1.6rem/1 var(--f-display)}
-.price-table-wrap{overflow-x:auto;background:#fff;box-shadow:var(--shadow)}
-.price-table{width:100%;border-collapse:collapse;font-size:1rem}
-.price-table th,.price-table td{text-align:start;padding:.85rem 1rem;border-bottom:1.5px dashed rgba(42,35,32,.2);vertical-align:top}
-.price-table thead th{background:var(--ink);color:var(--paper);font-weight:700}
-.price-table tbody th a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--coral)}
-.price-table td:nth-child(2){font:900 1.15rem/1.3 var(--f-display);white-space:nowrap}
-@media (max-width:600px){
-  .price-table thead{display:none}
-  .price-table tr{display:block;padding:.8rem 1rem;border-bottom:1.5px dashed rgba(42,35,32,.2)}
-  .price-table th,.price-table td{display:block;padding:.1rem 0;border:0}
-}
-.included-row{margin-top:3rem}
-.extras.three{grid-template-columns:repeat(3,1fr);margin-top:0}
-@media (max-width:980px){.extras.three{grid-template-columns:1fr}}
-
-/* צרו קשר */
-.contact-sec{padding-block:clamp(3.5rem,7vw,5.5rem)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.contact-list li{align-items:flex-start}
-.contact-list .ic{font-size:1.1rem}
-.ic-pink{background:var(--pink)!important}.ic-sage{background:var(--sage)!important}.ic-peach{background:var(--peach)!important}.ic-mustard{background:var(--mustard)!important}
-@media (max-width:880px){.contact-grid{grid-template-columns:1fr;gap:2rem}}
-.foot-h{font:600 1rem/1.3 var(--f-hand);color:var(--mustard);margin:0 0 .8rem}
-.foot-about{margin-top:1rem;opacity:.85;max-width:34ch}
-.site-footer{margin-top:0}
-.center-head{text-align:center}.center-head .wrap > *{max-width:none}.center-head .hero-ctas{justify-content:center}
-
-/* וואטסאפ – בר תחתון במובייל */
-.wa-bar{display:none}
-@media (max-width:760px){
-  .wa-float{display:none}
-  .wa-bar{display:flex;position:fixed;z-index:60;bottom:0;left:0;right:0;align-items:center;justify-content:center;gap:.6rem;
-    padding:.85rem 1rem calc(.85rem + env(safe-area-inset-bottom));background:#1A7F4B;color:#fff;font:700 1.05rem/1.2 var(--f-body);text-decoration:none;
-    border-top:2px solid var(--ink);box-shadow:0 -6px 18px rgba(0,0,0,.18)}
-  .wa-bar svg{width:1.45em;height:1.45em;flex:none}
-  body{padding-bottom:62px}
-}
-.logo-text small{font-size:.7rem}
-.open-sec .no-dates{flex-direction:column;align-items:flex-start}
-.checklist{margin-bottom:1.8rem}
-.site-footer .logo-text small{color:var(--kraft)}
-@media (max-width:600px){.hero-ctas{flex-direction:column;align-items:stretch}.hero-ctas .btn{justify-content:center}}
+.more-links{list-style:none;padding:0;margin:0;display:grid;gap:.9rem;font-size:1.1rem}
+.orgs-sec{padding-block:3.5rem}
+.open-sec .no-dates,.no-dates{flex-direction:column;align-items:flex-start}
+.checklist{margin-bottom:1.6rem}
+.ig-handle{border-bottom:0}
+.ig-strip img{aspect-ratio:1}

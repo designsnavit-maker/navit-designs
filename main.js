@@ -1,6 +1,6 @@
 /* =====================================================================
    main.js – שיפורים קטנים בלבד (כל התוכן כבר נמצא ב-HTML).
-   תפריט נייד, אנימציית הופעה עדינה, סרטון הסדנה.
+   תפריט נייד, אנימציית הופעה עדינה, סרטון הסדנה, לייטבוקס לעבודות.
    ===================================================================== */
 (function () {
   "use strict";
@@ -60,4 +60,57 @@
     }, { threshold: 0.25 }).observe(v);
   }
   sync();
+})();
+
+/* ===== לייטבוקס לעבודות: פתיחה בגדול, חצים, מקלדת, החלקה, Esc ===== */
+(function () {
+  "use strict";
+  var dataEl = document.getElementById("works-data"), dlg = document.getElementById("work-modal");
+  if (!dataEl || !dlg || typeof dlg.showModal !== "function") return;   // בלי JS/dialog – הקישור פותח את התמונה עצמה
+  var works; try { works = JSON.parse(dataEl.textContent); } catch (e) { return; }
+  var img = dlg.querySelector(".lb-img"), cur = 0, opener = null;
+  function q(s) { return dlg.querySelector(s); }
+  function show(i) {
+    cur = (i + works.length) % works.length;
+    var w = works[cur];
+    img.removeAttribute("src"); img.removeAttribute("srcset");
+    img.width = w.w; img.height = w.h; img.alt = w.alt;
+    if (w.set) { img.sizes = "(max-width:700px) 92vw, 520px"; img.srcset = w.set; }
+    img.src = w.src;
+    q(".lb-title").textContent = w.t;
+    q(".lb-en").textContent = w.en || "";
+    q(".lb-desc").textContent = w.d || "";
+    q(".lb-mat").textContent = w.m || "";
+    q(".lb-count").textContent = (cur + 1) + " / " + works.length;
+  }
+  function open(i, el) {
+    opener = el || document.activeElement; show(i);
+    document.body.classList.add("lb-open");
+    dlg.showModal();
+    q(".modal-close").focus();
+  }
+  function close() { if (dlg.open) dlg.close(); }
+  dlg.addEventListener("close", function () { document.body.classList.remove("lb-open"); if (opener && opener.focus) opener.focus({ preventScroll: true }); });
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.work[data-i]");
+    if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button > 0) return;
+    e.preventDefault(); open(parseInt(a.getAttribute("data-i"), 10) || 0, a);
+  });
+  q(".modal-close").addEventListener("click", close);
+  q(".lb-prev").addEventListener("click", function () { show(cur - 1); });
+  q(".lb-next").addEventListener("click", function () { show(cur + 1); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });   // לחיצה על הרקע
+  q(".lb-contact").addEventListener("click", function () { opener = null; close(); });
+  dlg.addEventListener("keydown", function (e) {
+    // באתר מימין לשמאל: חץ שמאלה = הבא, חץ ימינה = הקודם
+    if (e.key === "ArrowLeft") { e.preventDefault(); show(cur + 1); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); show(cur - 1); }
+  });
+  var x0 = null, y0 = null;
+  dlg.addEventListener("touchstart", function (e) { var t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; }, { passive: true });
+  dlg.addEventListener("touchend", function (e) {
+    if (x0 === null) return;
+    var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0; x0 = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(cur + (dx > 0 ? 1 : -1));   // החלקה ימינה = הבא (RTL)
+  }, { passive: true });
 })();
