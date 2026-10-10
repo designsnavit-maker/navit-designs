@@ -623,6 +623,7 @@ body.lb-open{overflow:hidden}
 /* רכיבים קטנים */
 .extras.one{grid-template-columns:1fr;max-width:760px;margin-inline:auto}
 .extras.three{grid-template-columns:repeat(3,1fr);margin-top:0}
+.extras.two{margin-top:0}
 @media (max-width:980px){.extras.three{grid-template-columns:1fr}}
 .extra .link{white-space:nowrap}
 .price-note{display:inline-flex;flex-direction:column;gap:.2rem;background:#fff;padding:1.1rem 1.4rem;box-shadow:var(--shadow);transform:rotate(-1deg);border-top:8px solid var(--mustard);margin:.4rem 0 .6rem}
