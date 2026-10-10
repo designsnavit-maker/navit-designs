@@ -662,3 +662,24 @@ body.lb-open{overflow:hidden}
 .date-card ul li{white-space:normal}
 @media (max-width:760px){.date-reg{align-items:flex-start;text-align:start}}
 .date-card .date-line{font-size:1.05rem;margin-bottom:.35rem}
+
+/* ---------- אודות: תמונה של נוית + הטקסט שלה (אוקטובר 2026) ---------- */
+.about-intro-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+.about-intro-grid > .about-intro-text{max-width:none}
+.about-intro-text .lead{max-width:30em;color:var(--ink)}
+.about-intro-text p{max-width:34em}
+.page-head .about-photo-wrap{position:relative;justify-self:center;width:100%;max-width:380px;padding:10px 4px}
+.about-photo{position:relative;z-index:1;margin:0;background:#fff;padding:12px 12px 16px;box-shadow:var(--shadow);transform:rotate(2.5deg)}
+.about-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.about-photo-wrap .ap-shape{position:absolute;width:44%;aspect-ratio:1;border-radius:50%;background:var(--mustard);bottom:-4%;inset-inline-end:-10%}
+.about-photo-wrap .ap-dots{position:absolute;width:40%;height:18%;top:-3%;inset-inline-start:-10%;background-image:radial-gradient(var(--ink) 22%,transparent 24%);background-size:14px 14px;opacity:.45}
+.about-text p{max-width:34em}
+.about-pull{display:inline-block;font:900 clamp(1.3rem,2.6vw,1.7rem)/1.35 var(--f-display);background:var(--paper);padding:.35em .75em .45em;margin:1.2em 0 .8em;box-shadow:var(--shadow);transform:rotate(-1deg)}
+.about-signoff{font:500 1.15rem/1.5 var(--f-hand);color:var(--coral)}
+.about-where{margin-top:1.6em;color:var(--ink-soft)}
+@media (max-width:880px){
+  .about-intro-grid{grid-template-columns:1fr;gap:1.6rem}
+  .page-head .about-photo-wrap{order:-1;max-width:260px;margin-top:.4rem}
+  .about-photo-wrap .ap-shape{inset-inline-end:-8%}
+  .about-photo-wrap .ap-dots{inset-inline-start:-6%}
+}
