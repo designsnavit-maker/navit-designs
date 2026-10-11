@@ -684,3 +684,13 @@ body.lb-open{overflow:hidden}
   .about-photo-wrap .ap-shape{inset-inline-end:-8%}
   .about-photo-wrap .ap-dots{inset-inline-start:-6%}
 }
+
+/* v7 – עמוד "סדנת קולאז' לנשים": פירורי לחם, שורת עובדות, תגיות אירועים */
+.crumbs{font-size:.9rem;color:var(--ink-soft);margin-bottom:.8rem}
+.crumbs ol{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.2rem .5rem}
+.crumbs li+li::before{content:"‹";margin-inline-end:.5rem;opacity:.6}
+.crumbs a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.hero-facts{font:600 1rem/1.5 var(--f-hand);color:var(--ink-soft);margin:.2rem 0 1.2rem}
+.occasions{list-style:none;padding:0;margin:.4rem 0 1.2rem;display:flex;flex-wrap:wrap;gap:.6rem}
+.occasions li{background:var(--paper);padding:.45em .9em;box-shadow:var(--shadow);font-weight:600;transform:rotate(-1deg)}
+.occasions li:nth-child(even){transform:rotate(1.2deg);background:#fff}
