@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://designsnavit-maker.github.io/navit-designs/sitemap.xml
+Sitemap: https://navitdesigns.co.il/sitemap.xml
