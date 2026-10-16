@@ -703,3 +703,28 @@ body.lb-open{overflow:hidden}
   .wa-float svg{width:22px;height:22px}
   .wa-float.is-hidden{opacity:0;transform:translateY(20px);pointer-events:none}
 }
+
+/* ===== חנות: גלריה קטנה לכל עבודה + הזמנה בוואטסאפ ===== */
+.work{cursor:default;display:flex;flex-direction:column}
+a.work-open{display:block;text-decoration:none;color:inherit;cursor:pointer}
+.work:hover .work-img::after,.work-open:focus-visible .work-img::after{opacity:1;transform:none}
+.work-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:.7rem}
+.work-thumb{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--paper-2);border:1px solid rgba(42,35,32,.12)}
+.work-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.work-thumb:hover img,.work-thumb:focus-visible img{transform:scale(1.06)}
+.work-order{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin-top:auto;padding-top:.9rem}
+.btn.work-wa{background:#25D366;border-color:#1a9e4c;color:#10331d;padding:.55rem 1rem;font-size:.95rem}
+.btn.work-wa:hover{background:#1fbd5a}
+.work-etsy{font-size:.82rem;color:var(--ink-soft)}
+.small-note{font-size:.9rem;color:var(--ink-soft);margin-top:.6rem}
+.lb-media{grid-template-rows:auto auto}
+.lb-thumbs{display:flex;gap:8px;justify-content:center;margin-top:.7rem}
+.lb-thumb{width:72px;aspect-ratio:4/3;padding:0;border:2px solid transparent;background:none;cursor:pointer;overflow:hidden;opacity:.7}
+.lb-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.lb-thumb[aria-pressed="true"]{border-color:var(--ink);opacity:1}
+@media (max-width:600px){
+  .work-thumbs{gap:4px}
+  .btn.work-wa{width:100%;justify-content:center;text-align:center;font-size:.88rem;padding:.5rem .6rem}
+  .work-etsy{font-size:.75rem}
+  .lb-thumb{width:58px}
+}

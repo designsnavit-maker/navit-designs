@@ -70,21 +70,40 @@
   var works; try { works = JSON.parse(dataEl.textContent); } catch (e) { return; }
   var img = dlg.querySelector(".lb-img"), cur = 0, opener = null;
   function q(s) { return dlg.querySelector(s); }
-  function show(i) {
+  var thumbs = q(".lb-thumbs"), g = 0;
+  function setImg(o) {
+    img.removeAttribute("src"); img.removeAttribute("srcset");
+    img.width = o.w; img.height = o.h; img.alt = o.alt;
+    if (o.set) { img.sizes = "(max-width:700px) 92vw, 640px"; img.srcset = o.set; }
+    img.src = o.src;
+  }
+  function pick(k) {
+    var w = works[cur], list = w.g && w.g.length ? w.g : [w];
+    g = (k + list.length) % list.length; setImg(list[g]);
+    if (thumbs) Array.prototype.forEach.call(thumbs.children, function (b, j) { b.setAttribute("aria-pressed", String(j === g)); });
+  }
+  function show(i, k) {
     cur = (i + works.length) % works.length;
     var w = works[cur];
-    img.removeAttribute("src"); img.removeAttribute("srcset");
-    img.width = w.w; img.height = w.h; img.alt = w.alt;
-    if (w.set) { img.sizes = "(max-width:700px) 92vw, 520px"; img.srcset = w.set; }
-    img.src = w.src;
+    if (thumbs) {
+      thumbs.innerHTML = "";
+      (w.g || []).forEach(function (o, j) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "lb-thumb";
+        b.setAttribute("aria-label", o.alt);
+        var t = document.createElement("img"); t.src = o.src.replace(/\.webp$/, "-800.webp"); t.alt = ""; t.width = 800; t.height = 600;
+        b.appendChild(t); b.addEventListener("click", function () { pick(j); }); thumbs.appendChild(b);
+      });
+    }
+    pick(typeof k === "number" ? k : 0);
     q(".lb-title").textContent = w.t;
     q(".lb-en").textContent = w.en || "";
     q(".lb-desc").textContent = w.d || "";
     q(".lb-mat").textContent = w.m || "";
     q(".lb-count").textContent = (cur + 1) + " / " + works.length;
+    var wa = q(".lb-wa"); if (wa && w.wa) wa.href = w.wa;
   }
-  function open(i, el) {
-    opener = el || document.activeElement; show(i);
+  function open(i, el, k) {
+    opener = el || document.activeElement; show(i, k);
     document.body.classList.add("lb-open");
     dlg.showModal();
     q(".modal-close").focus();
@@ -92,15 +111,14 @@
   function close() { if (dlg.open) dlg.close(); }
   dlg.addEventListener("close", function () { document.body.classList.remove("lb-open"); if (opener && opener.focus) opener.focus({ preventScroll: true }); });
   document.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest("a.work[data-i]");
+    var a = e.target.closest && e.target.closest("a[data-i]");
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button > 0) return;
-    e.preventDefault(); open(parseInt(a.getAttribute("data-i"), 10) || 0, a);
+    e.preventDefault(); open(parseInt(a.getAttribute("data-i"), 10) || 0, a, a.hasAttribute("data-g") ? parseInt(a.getAttribute("data-g"), 10) : 0);
   });
   q(".modal-close").addEventListener("click", close);
   q(".lb-prev").addEventListener("click", function () { show(cur - 1); });
   q(".lb-next").addEventListener("click", function () { show(cur + 1); });
   dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });   // לחיצה על הרקע
-  q(".lb-contact").addEventListener("click", function () { opener = null; close(); });
   dlg.addEventListener("keydown", function (e) {
     // באתר מימין לשמאל: חץ שמאלה = הבא, חץ ימינה = הקודם
     if (e.key === "ArrowLeft") { e.preventDefault(); show(cur + 1); }
