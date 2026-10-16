@@ -114,3 +114,14 @@
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(cur + (dx > 0 ? 1 : -1));   // החלקה ימינה = הבא (RTL)
   }, { passive: true });
 })();
+
+/* ===== כפתור וואטסאפ צף: מוסתר כשכפתור הוואטסאפ של העמוד על המסך ===== */
+(function () {
+  var f = document.querySelector(".wa-float"); if (!f || !("IntersectionObserver" in window)) return;
+  var vis = new Set();
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? vis.add(e.target) : vis.delete(e.target); });
+    f.classList.toggle("is-hidden", vis.size > 0);
+  });
+  document.querySelectorAll(".btn-wa").forEach(function (b) { io.observe(b); });
+})();

@@ -694,3 +694,12 @@ body.lb-open{overflow:hidden}
 .occasions{list-style:none;padding:0;margin:.4rem 0 1.2rem;display:flex;flex-wrap:wrap;gap:.6rem}
 .occasions li{background:var(--paper);padding:.45em .9em;box-shadow:var(--shadow);font-weight:600;transform:rotate(-1deg)}
 .occasions li:nth-child(even){transform:rotate(1.2deg);background:#fff}
+
+/* ===== WhatsApp-only CTA + sticky mobile button ===== */
+.btn-wa{--bg:#1F7A4D;--fg:#fff}
+.wa-float{display:none}
+@media (max-width:880px){
+  .wa-float{position:fixed;inset-inline-start:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.1rem;border-radius:999px;background:#1F7A4D;color:#fff;font:700 1rem/1 var(--f-body);text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:opacity .2s,transform .2s}
+  .wa-float svg{width:22px;height:22px}
+  .wa-float.is-hidden{opacity:0;transform:translateY(20px);pointer-events:none}
+}
