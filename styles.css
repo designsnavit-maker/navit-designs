@@ -728,3 +728,4 @@ a.work-open{display:block;text-decoration:none;color:inherit;cursor:pointer}
   .work-etsy{font-size:.75rem}
   .lb-thumb{width:58px}
 }
+.lb-etsy[hidden]{display:none}

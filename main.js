@@ -101,6 +101,7 @@
     q(".lb-mat").textContent = w.m || "";
     q(".lb-count").textContent = (cur + 1) + " / " + works.length;
     var wa = q(".lb-wa"); if (wa && w.wa) wa.href = w.wa;
+    var et = q(".lb-etsy"); if (et) et.hidden = w.etsy === false;   // עבודות בלי ליסטינג ב-Etsy
   }
   function open(i, el, k) {
     opener = el || document.activeElement; show(i, k);
