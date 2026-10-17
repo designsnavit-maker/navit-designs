@@ -729,3 +729,6 @@ a.work-open{display:block;text-decoration:none;color:inherit;cursor:pointer}
   .lb-thumb{width:58px}
 }
 .lb-etsy[hidden]{display:none}
+/* גזיר שקוף (מצלמה) בתוך משבצת תמונה של כרטיס – מוצג שלם וממורכז על רקע נייר */
+.ws-card .ws-img.ws-cutout{background:radial-gradient(circle at 52% 54%,var(--pink) 0 34%,transparent 34.5%),var(--paper-2)}
+.ws-card .ws-img.ws-cutout img{object-fit:contain;object-position:50% 50%;padding:5% 0;box-sizing:border-box;filter:drop-shadow(0 6px 10px rgba(42,35,32,.2))}
